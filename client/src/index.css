@@ -1,0 +1,5 @@
+@font-face {
+    font-family: "dbscreenhead-black";
+    src: local("dbscreenhead-black"),
+        url("./fonts/dbscreenhead-black.woff") format("woff");
+}
