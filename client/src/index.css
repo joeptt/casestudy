@@ -1,5 +1,69 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Fonts */
 @font-face {
     font-family: "dbscreenhead-black";
     src: local("dbscreenhead-black"),
         url("./fonts/dbscreenhead-black.woff") format("woff");
+}
+
+/* App.js */
+.page-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: dbscreenhead-black;
+}
+
+/* Ride Component */
+.ride-wrapper {
+    height: 70px;
+    width: 70%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-bar span:nth-child(odd) {
+    height: 13px;
+    width: 13px;
+    border: 2px solid #e3e3e3;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.progress-bar span:nth-child(even) {
+    margin-top: -30px;
+    font-size: 13px;
+}
+
+.connection-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.time-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

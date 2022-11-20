@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import Ride from "./components/ride";
 
 export default function App() {
     const [rides, setRides] = useState();
@@ -14,11 +14,21 @@ export default function App() {
     }, []);
 
     return (
-        <div>
-            <p>Hello, World!</p>
+        <div className="page-wrapper">
+            {rides && (
+                <div>
+                    <h1>Fahrplananzeige</h1>
+                </div>
+            )}
+            {rides && (
+                <div>
+                    <button>Von Frankfurt</button>
+                    <button>Nach Frankfurt</button>
+                </div>
+            )}
             {rides ? (
                 rides.map((ride, i) => {
-                    return <p key={i}>{ride.to}</p>;
+                    return <Ride key={i} ride={ride} />;
                 })
             ) : (
                 <p>Loading..</p>
