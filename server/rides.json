@@ -3,20 +3,20 @@
         {
             "from": "Berlin Hbf",
             "to": "Frankfurt(Main)Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
+            "starttime": "15:40",
+            "endtime": "21:20"
+        },
+        {
+            "from": "Suttgart Hbf",
+            "to": "Berlin Hbf",
+            "starttime": "22:00",
+            "endtime": "23:40"
         },
         {
             "from": "Frankfurt(Main)Hbf",
             "to": "Berlin Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
-        },
-        {
-            "from": "Frankfurt(Main)Hbf",
-            "to": "Berlin Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
+            "starttime": "06:00",
+            "endtime": "10:10"
         },
         {
             "from": "Frankfurt(Main)Hbf",
