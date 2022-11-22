@@ -16,6 +16,7 @@ export default function App() {
         fetch("/rides")
             .then((res) => res.json())
             .then((data) => {
+                console.log(data.rides);
                 setAllRides(data.rides);
                 setRidesDisplayed(data.rides);
             });
@@ -66,35 +67,39 @@ export default function App() {
     };
 
     return (
-        <div className="page-wrapper">
+        <>
             {ridesDisplayed && (
-                <div>
-                    <h1>DB Fahrplananzeige</h1>
+                <div className="text-wrapper">
+                    <span>DB</span>
+                    <span>&nbsp;</span>
+                    <span>Fahrplananzeige</span>
                 </div>
             )}
             {ridesDisplayed && (
-                <div>
+                <div className="buttons-wrapper">
                     <button
                         style={{ opacity: `${fromButtonOpacity}%` }}
                         onClick={fromFrankfurt}
                     >
-                        Von Frankfurt
+                        von Frankfurt
                     </button>
                     <button
                         style={{ opacity: `${toButtonOpacity}%` }}
                         onClick={toFrankfurt}
                     >
-                        Nach Frankfurt
+                        nach Frankfurt
                     </button>
                 </div>
             )}
             {ridesDisplayed ? (
-                ridesDisplayed.map((ride, i) => {
-                    return <Ride key={i} ride={ride} />;
-                })
+                <div className="rides-wrapper">
+                    {ridesDisplayed.map((ride, i) => {
+                        return <Ride key={i} ride={ride} />;
+                    })}
+                </div>
             ) : (
                 <p>Loading..</p>
             )}
-        </div>
+        </>
     );
 }
