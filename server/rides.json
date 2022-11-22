@@ -1,8 +1,8 @@
 {
     "rides": [
         {
-            "from": "Frankfurt(Main)Hbf",
-            "to": "Berlin Hbf",
+            "from": "Berlin Hbf",
+            "to": "Frankfurt(Main)Hbf",
             "starttime": "09:40",
             "endtime": "11:20"
         },
