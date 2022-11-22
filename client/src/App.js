@@ -2,32 +2,65 @@ import { useEffect, useState } from "react";
 import Ride from "./components/ride";
 
 export default function App() {
-    const [rides, setRides] = useState();
+    const [allRides, setAllRides] = useState();
+    const [ridesDisplayed, setRidesDisplayed] = useState();
+    const [fromButtonClicked, setFromButtonClicked] = useState(false);
+    const [toButtonClicked, setToButtonClicked] = useState(false);
 
     useEffect(() => {
         fetch("/rides")
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.rides);
-                setRides(data.rides);
+                setAllRides(data.rides);
+                setRidesDisplayed(data.rides);
             });
     }, []);
 
+    const fromFrankfurt = () => {
+        if (fromButtonClicked) {
+            setRidesDisplayed(allRides);
+        } else {
+            const arr = [];
+            for (let i = 0; i < allRides.length; i++) {
+                if (allRides[i].from === "Frankfurt(Main)Hbf") {
+                    arr.push(allRides[i]);
+                }
+            }
+            setRidesDisplayed(arr);
+        }
+        setFromButtonClicked(!fromButtonClicked);
+    };
+
+    const toFrankfurt = () => {
+        if (toButtonClicked) {
+            setRidesDisplayed(allRides);
+        } else {
+            const arr = [];
+            for (let i = 0; i < allRides.length; i++) {
+                if (allRides[i].to === "Frankfurt(Main)Hbf") {
+                    arr.push(allRides[i]);
+                }
+            }
+            setRidesDisplayed(arr);
+        }
+        setToButtonClicked(!toButtonClicked);
+    };
+
     return (
         <div className="page-wrapper">
-            {rides && (
+            {ridesDisplayed && (
                 <div>
-                    <h1>Fahrplananzeige</h1>
+                    <h1>DB Fahrplananzeige</h1>
                 </div>
             )}
-            {rides && (
+            {ridesDisplayed && (
                 <div>
-                    <button>Von Frankfurt</button>
-                    <button>Nach Frankfurt</button>
+                    <button onClick={fromFrankfurt}>Von Frankfurt</button>
+                    <button onClick={toFrankfurt}>Nach Frankfurt</button>
                 </div>
             )}
-            {rides ? (
-                rides.map((ride, i) => {
+            {ridesDisplayed ? (
+                ridesDisplayed.map((ride, i) => {
                     return <Ride key={i} ride={ride} />;
                 })
             ) : (
