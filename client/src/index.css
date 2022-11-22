@@ -23,6 +23,11 @@ h1 {
     font-family: dbscreenhead-black;
 }
 
+/* Buttons */
+button {
+    opacity: 50%;
+}
+
 /* Ride Component */
 .ride-wrapper {
     height: 70px;
