@@ -1,64 +1,74 @@
 {
     "rides": [
         {
+            "uniqueID": "q1",
             "from": "Berlin Hbf",
             "to": "Frankfurt(Main)Hbf",
-            "starttime": "15:40",
-            "endtime": "21:20"
+            "starttime": "13:40",
+            "endtime": "18:20"
         },
         {
+            "uniqueID": "w2",
             "from": "Suttgart Hbf",
             "to": "Berlin Hbf",
-            "starttime": "22:00",
+            "starttime": "16:10",
             "endtime": "23:40"
         },
         {
+            "uniqueID": "e3",
             "from": "Frankfurt(Main)Hbf",
-            "to": "Berlin Hbf",
-            "starttime": "06:00",
-            "endtime": "10:10"
+            "to": "München Hbf",
+            "starttime": "13:00",
+            "endtime": "16:10"
         },
         {
+            "uniqueID": "r4",
             "from": "Frankfurt(Main)Hbf",
-            "to": "Berlin Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
+            "to": "Freiburg Hbf",
+            "starttime": "07:40",
+            "endtime": "17:20"
         },
         {
-            "from": "Frankfurt(Main)Hbf",
-            "to": "Berlin Hbf",
+            "uniqueID": "t5",
+            "from": "Hannover Hbf",
+            "to": "Frankfurt(Main)Hbf",
             "starttime": "09:40",
-            "endtime": "11:20"
+            "endtime": "23:40"
         },
         {
-            "from": "Frankfurt(Main)Hbf",
-            "to": "Berlin Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
+            "uniqueID": "y6",
+            "from": "Kiel Hbf",
+            "to": "Frankfurt(Main)Hbf",
+            "starttime": "14:40",
+            "endtime": "21:20"
         },
         {
+            "uniqueID": "u7",
             "from": "Frankfurt(Main)Hbf",
             "to": "Berlin Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
+            "starttime": "12:40",
+            "endtime": "22:00"
         },
         {
-            "from": "Frankfurt(Main)Hbf",
-            "to": "Berlin Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
+            "uniqueID": "i8",
+            "from": "Dortmund Hbf",
+            "to": "Frankfurt(Main)Hbf",
+            "starttime": "19:40",
+            "endtime": "21:40"
         },
         {
-            "from": "Frankfurt(Main)Hbf",
-            "to": "Berlin Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
+            "uniqueID": "o9",
+            "from": "Köln Hbf",
+            "to": "Erfurt Hbf",
+            "starttime": "14:30",
+            "endtime": "16:20"
         },
         {
+            "uniqueID": "p0",
             "from": "Frankfurt(Main)Hbf",
             "to": "Berlin Hbf",
-            "starttime": "09:40",
-            "endtime": "11:20"
+            "starttime": "17:40",
+            "endtime": "23:20"
         }
     ]
 }
