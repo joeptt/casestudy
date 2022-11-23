@@ -94,7 +94,7 @@ export default function App() {
             {ridesDisplayed ? (
                 <div className="rides-wrapper">
                     {ridesDisplayed.map((ride, i) => {
-                        return <Ride key={i} ride={ride} />;
+                        return <Ride key={ride.uniqueID} ride={ride} />;
                     })}
                 </div>
             ) : (
