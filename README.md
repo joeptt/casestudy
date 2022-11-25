@@ -1,0 +1,3 @@
+# casestudy
+
+How to start:
