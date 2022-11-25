@@ -71,6 +71,7 @@ button {
     font-family: dbscreensans-semibold;
     color: white;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .buttons-wrapper {
@@ -212,9 +213,11 @@ button {
     .text-wrapper {
         width: 90%;
     }
+
     .buttons-wrapper {
         width: 90%;
     }
+
     .rides-wrapper {
         width: 90%;
     }

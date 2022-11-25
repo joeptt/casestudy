@@ -9,6 +9,7 @@ export default function Ride({ ride }) {
             const arr = time.split(":");
             return +arr[0] * 60 + +arr[1];
         };
+
         // Get the duration by converting the time into minutes and substracting from one another
         const calculateDuration = (startTime, endTime) => {
             const startMinutes = convertToMinutes(startTime);

@@ -67,35 +67,33 @@ export default function App() {
 
     return (
         <>
-            {ridesDisplayed && (
-                <div className="text-wrapper">
-                    <span>DB</span>
-                    <span>&nbsp;</span>
-                    <span>Fahrplananzeige</span>
-                </div>
-            )}
-            {ridesDisplayed && (
-                <div className="buttons-wrapper">
-                    <button
-                        style={{ opacity: `${fromButtonOpacity}%` }}
-                        onClick={fromFrankfurt}
-                    >
-                        von Frankfurt
-                    </button>
-                    <button
-                        style={{ opacity: `${toButtonOpacity}%` }}
-                        onClick={toFrankfurt}
-                    >
-                        nach Frankfurt
-                    </button>
-                </div>
-            )}
             {ridesDisplayed ? (
-                <div className="rides-wrapper">
-                    {ridesDisplayed.map((ride) => {
-                        return <Ride key={ride.uniqueID} ride={ride} />;
-                    })}
-                </div>
+                <>
+                    <div className="text-wrapper">
+                        <span>DB</span>
+                        <span>&nbsp;</span>
+                        <span>Fahrplananzeige</span>
+                    </div>
+                    <div className="buttons-wrapper">
+                        <button
+                            style={{ opacity: `${fromButtonOpacity}%` }}
+                            onClick={fromFrankfurt}
+                        >
+                            von Frankfurt
+                        </button>
+                        <button
+                            style={{ opacity: `${toButtonOpacity}%` }}
+                            onClick={toFrankfurt}
+                        >
+                            nach Frankfurt
+                        </button>
+                    </div>
+                    <div className="rides-wrapper">
+                        {ridesDisplayed.map((ride) => {
+                            return <Ride key={ride.uniqueID} ride={ride} />;
+                        })}
+                    </div>
+                </>
             ) : (
                 <LoadingRing />
             )}
