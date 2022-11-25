@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Ride from "./components/ride";
+import LoadingRing from "./components/loading-ring";
 
 export default function App() {
     const opacity = 100;
@@ -16,7 +17,6 @@ export default function App() {
         fetch("/rides")
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.rides);
                 setAllRides(data.rides);
                 setRidesDisplayed(data.rides);
             });
@@ -35,6 +35,7 @@ export default function App() {
             // if the button is currently not focused, set opacity low and iterate through all connections to find the
             // ones going to Frankfurt
             setFromButtonOpacity(clickedOpacity);
+            // Using for-loop
             const arr = [];
             for (let i = 0; i < allRides.length; i++) {
                 if (allRides[i].from === "Frankfurt(Main)Hbf") {
@@ -55,12 +56,10 @@ export default function App() {
             setRidesDisplayed(allRides);
         } else {
             setToButtonOpacity(clickedOpacity);
-            const arr = [];
-            for (let i = 0; i < allRides.length; i++) {
-                if (allRides[i].to === "Frankfurt(Main)Hbf") {
-                    arr.push(allRides[i]);
-                }
-            }
+            // Using filter method
+            const arr = allRides.filter((ride) => {
+                return ride.to === "Frankfurt(Main)Hbf";
+            });
             setRidesDisplayed(arr);
         }
         setToButtonClicked(!toButtonClicked);
@@ -93,12 +92,12 @@ export default function App() {
             )}
             {ridesDisplayed ? (
                 <div className="rides-wrapper">
-                    {ridesDisplayed.map((ride, i) => {
+                    {ridesDisplayed.map((ride) => {
                         return <Ride key={ride.uniqueID} ride={ride} />;
                     })}
                 </div>
             ) : (
-                <p>Loading..</p>
+                <LoadingRing />
             )}
         </>
     );

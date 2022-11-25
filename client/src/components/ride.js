@@ -10,19 +10,18 @@ export default function Ride({ ride }) {
             return +arr[0] * 60 + +arr[1];
         };
         // Get the duration by converting the time into minutes and substracting from one another
-        const calculateDuration = (start, end) => {
-            const startMinutes = convertToMinutes(start);
-            const endMinutes = convertToMinutes(end);
+        const calculateDuration = (startTime, endTime) => {
+            const startMinutes = convertToMinutes(startTime);
+            const endMinutes = convertToMinutes(endTime);
             const durationInMinutes = endMinutes - startMinutes;
-
             const hours = Math.floor(durationInMinutes / 60);
             const minutes = durationInMinutes % 60;
             setDuration(`${hours}h ${minutes}min`);
         };
 
-        const calculatePercentage = (start, end) => {
-            const startMinutes = convertToMinutes(start);
-            const endMinutes = convertToMinutes(end);
+        const calculatePercentage = (startTime, endTime) => {
+            const startMinutes = convertToMinutes(startTime);
+            const endMinutes = convertToMinutes(endTime);
             const date = new Date();
             const time = date.getHours() + ":" + date.getMinutes();
             const timeInMinutes = convertToMinutes(time);
@@ -32,7 +31,7 @@ export default function Ride({ ride }) {
                 setProgressBar("100%");
             } else {
                 // Prozentsatz rechnen
-                const percent = Math.floor((currentDuration / duration) * 100);
+                const percent = Math.round((currentDuration / duration) * 100);
                 if (percent < 0) return setProgressBar("0%");
                 setProgressBar(`${percent}%`);
             }
